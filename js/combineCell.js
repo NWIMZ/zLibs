@@ -1,8 +1,9 @@
 /**
- * @description 合并行
+ * @description 合并表格行
  * @param {Array} list 数据
  * @param {Array} fieldArr 要合并的字段
- * 渲染时即可根据dis属性控制显示与否，span属性控制rowspan的值
+ * 
+ * 渲染时根据dis属性控制显示与否，span属性控制rowspan的值
  */
 function combineCell(list, fieldArr) {
     for (var j = 0; j < fieldArr.length; j++) {
