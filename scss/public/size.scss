@@ -1,0 +1,67 @@
+@charset "utf-8";
+// 尺寸相关
+// 宽度
+@each $w in 5 6 7 8 9 10 11 14 15 16 17 20 22 24 25 30 40 60{
+	.w#{$w}{
+		width: #{$w*10}px!important;
+	}
+}
+
+@each $wp in 10 20 25 30 40 50 60 70 80 90 100{
+    .w#{$wp}p{
+        width: #{$wp/100*100%}!important;
+    }
+}
+
+/*高度*/
+@each $h in 2 20 50{
+	.h#{$h}{
+		height: #{$h*10}px!important;
+	}
+}
+
+/* margin */
+@for $mt from 0 through 6{
+	.mt#{$mt}{
+		margin-top: #{$mt*10}px!important;
+	}
+}
+
+@for $mr from 0 through 6{
+	.mr#{$mr}{
+		margin-right: #{$mr*10}px!important;
+	}
+}
+
+@for $mb from 0 through 6{
+    .mb#{$mb}{
+        margin-bottom: #{$mb*10}px!important;
+    }
+}
+
+@each $ml in 0 1 2 3 4 5 6 7 8 13{
+    .ml#{$ml}{
+        margin-left: #{$ml*10}px!important;
+    }
+}
+
+
+/* padding */
+
+@for $pt from 0 through 8{
+	.pt#{$pt}{
+		padding-top: #{$pt*10}px!important;
+	}
+}
+
+@for $pl from 0 through 8{
+	.pl#{$pl}{
+		padding-left: #{$pl*10}px!important;
+	}
+}
+
+@for $pr from 0 through 8{
+	.pr#{$pr}{
+		padding-right: #{$pr*10}px!important;
+	}
+}

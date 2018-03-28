@@ -1,0 +1,33 @@
+@charset "UTF-8";
+/*表单控件*/
+input[type=text], select {
+  box-sizing: border-box;
+  width: 220px;
+  height: 38px;
+  padding-left: 10px;
+  margin: 6px;
+  font-size: 18px;
+  background-color: #07121d;
+  border: 1px solid rgba(255, 255, 255, 0.3); }
+  input[type=text]:focus, select:focus {
+    border-color: #fff; }
+
+/* 按钮 */
+input[type=button], button {
+  height: 38px;
+  font-size: 16px;
+  font-weight: 100;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: #07121d;
+  padding-left: 10px;
+  padding-right: 10px;
+  transition: all 0.2s; }
+  input[type=button]:hover, button:hover {
+    color: #fff;
+    border-color: #fff; }
+
+textarea {
+  background-color: #07121d;
+  border: 1px solid rgba(255, 255, 255, 0.3); }
+
+/*# sourceMappingURL=form_control.css.map */

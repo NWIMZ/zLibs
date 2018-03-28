@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": ";AACA,QAAQ;AAEJ,kBAAK;EACD,MAAM,EAAE,cAAc;EACtB,OAAO,EAAE,IAAI;EACb,UAAU,EAAE,MAAM",
+"sources": ["../../scss/public/tabel.scss"],
+"names": [],
+"file": "tabel.css"
+}

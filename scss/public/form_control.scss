@@ -1,0 +1,40 @@
+@charset "utf-8";
+/*表单控件*/
+$border-color: rgba(255,255,255,0.3);
+$background-color: #07121d;
+$text-color-active: #fff;
+
+$height: 38px;
+input[type=text],select{
+	box-sizing: border-box;
+	width: 220px;
+	height: 38px;
+	padding-left: 10px;
+	margin: 6px;
+	font-size: 18px;
+	background-color: $background-color;
+	border: 1px solid $border-color;
+
+	&:focus{
+		border-color: $text-color-active;
+	}
+}
+/* 按钮 */
+input[type=button],button{
+	height: 38px;
+	font-size: 16px;
+	font-weight: 100;
+	border: 1px solid $border-color;
+	background-color: $background-color;
+	padding-left: 10px;
+	padding-right: 10px;
+	transition: all 0.2s;
+	&:hover{
+		color: $text-color-active;
+		border-color: $text-color-active;
+	}
+}
+textarea{
+	background-color: $background-color;
+	border: 1px solid $border-color;
+}
