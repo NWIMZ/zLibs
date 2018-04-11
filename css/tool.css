@@ -1,0 +1,10 @@
+.disabled-longtouch {
+  -webkit-touch-callout: none; }
+
+.disabled-select {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  user-select: none; }
+
+/*# sourceMappingURL=tool.css.map */

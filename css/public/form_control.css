@@ -1,19 +1,24 @@
 @charset "UTF-8";
-/*表单控件*/
-input[type=text], select {
+/* 表单控件 */
+/* 输入框、下拉框 */
+input[type=text],
+select {
   box-sizing: border-box;
   width: 220px;
   height: 38px;
   padding-left: 10px;
+  padding-right: 10px;
   margin: 6px;
   font-size: 18px;
   background-color: #07121d;
   border: 1px solid rgba(255, 255, 255, 0.3); }
-  input[type=text]:focus, select:focus {
+  input[type=text]:focus,
+  select:focus {
     border-color: #fff; }
 
 /* 按钮 */
-input[type=button], button {
+input[type=button],
+button {
   height: 38px;
   font-size: 16px;
   font-weight: 100;
@@ -22,12 +27,24 @@ input[type=button], button {
   padding-left: 10px;
   padding-right: 10px;
   transition: all 0.2s; }
-  input[type=button]:hover, button:hover {
+  input[type=button]:hover,
+  button:hover {
     color: #fff;
     border-color: #fff; }
 
+/* 文本域 */
 textarea {
   background-color: #07121d;
   border: 1px solid rgba(255, 255, 255, 0.3); }
+
+/* placeholder */
+input::-webkit-input-placeholder {
+  color: #AAAAAA; }
+input:focus::-webkit-input-placeholder {
+  color: #EEEEEE; }
+
+/* 表单元素样式重置 */
+.form-ctrl-reset {
+  -webkit-appearance: none; }
 
 /*# sourceMappingURL=form_control.css.map */

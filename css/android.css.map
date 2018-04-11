@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": ";AACA,QAAQ;AAER;;;QAGS;EACL,2BAA2B,EAAE,gBAAgB;EAC7C,mBAAmB,EAAE,yBAAyB",
+"sources": ["../scss/android.scss"],
+"names": [],
+"file": "android.css"
+}
