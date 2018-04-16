@@ -6,21 +6,19 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
 </head>
 <style>
+    *{
+        padding:0;
+    margin:0;
+    }
 html{
     height: 100%;
     width: 100%;
     font-family: 'PingFangSC-Thin';
 }
 body {
-    padding:0;
-    margin:0;
     overflow:hidden;
     height: 100%;
     width: 100%;
-}
-canvas {
-    padding:0;
-    margin:0;
 }
 div.btnbg {
     position:fixed;
@@ -43,25 +41,17 @@ div.btnbg {
     overflow: hidden;
     height: 100%;
     width: 100%;
-    box-sizing: border-box;
-    border: 1px solid;
 }
 ul{
     list-style: none;
-    padding: 0;
 }
 #text{
     position: absolute;
     left: 10%;
-    top: 70%;
-    /* width: 100%; */
+    top: 60%;
     z-index: 20;
     color: #fff;
-   
-    
-    /* text-align: center; */
     font-size: 22px;
-    transform: translateY(1px);
     transition: 1s all;
 }
 
@@ -85,7 +75,6 @@ ul{
 
 <script>
     window.addEventListener('load',function(){
-        console.log(123);
         var oText = document.getElementById('text');
         var aTexts = oText.getElementsByTagName('li');
         var length = aTexts.length;
@@ -120,6 +109,7 @@ ul{
 
         var offset = 0;
         var timer2 = setInterval(function() {
+            oText.style.webkitTransform = 'translateY(' + offset + 'px)';
             oText.style.transform = 'translateY(' + offset + 'px)';
             offset -= 0.15;
         },10);
