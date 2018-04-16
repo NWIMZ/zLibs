@@ -65,6 +65,15 @@ div.btnbg {
 #text li.active{
     opacity: 1;
 }
+#end{
+    color: #fff;
+    position: absolute;
+    left: 10%;
+    top: 70%;
+    transition: 1s all;
+    opacity: 0;
+    font-size: 22px;
+}
 </style>
 
 <script>
@@ -83,6 +92,10 @@ div.btnbg {
                 clearInterval(timer2);
                 setTimeout(() => {
                     oText.style.opacity = 0;
+                    setTimeout(function(){
+                        document.getElementById('end').style.opacity = 1;
+
+                    },1000)
                 }, 2000);
             }
             console.log(i);
@@ -100,7 +113,7 @@ div.btnbg {
         var offset = 0;
         var timer2 = setInterval(function() {
             oText.style.transform = 'translateY(' + offset + 'px)';
-            offset -= 0.16;
+            offset -= 0.15;
         },10);
     })
 </script>
@@ -144,6 +157,8 @@ div.btnbg {
             <li>愿你天黑有灯，下雨有伞</li>
             <li>愿你一路上，有良人相伴</li>
         </ul>
+
+        <div id="end">付丽棠，生日快乐</div>
     </div>
 <canvas id="sakura"></canvas>
 <div class="btnbg">
