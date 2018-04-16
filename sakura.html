@@ -43,6 +43,9 @@ div.btnbg {
     box-sizing: border-box;
     border: 1px solid;
 }
+ul{
+    list-style: none;
+}
 #text{
     position: absolute;
     left: 10%;
@@ -50,7 +53,7 @@ div.btnbg {
     /* width: 100%; */
     z-index: 20;
     color: #fff;
-    list-style: none;
+   
     padding: 0;
     /* text-align: center; */
     font-size: 22px;
@@ -84,13 +87,13 @@ div.btnbg {
         var length = aTexts.length;
         var i = 1;
         aTexts[0].className = 'active';
-        var timer = setInterval(() => {
+        var timer = setInterval(function() {
             aTexts[i].className = 'active';
             i++;
             if(i>=length){
                 clearInterval(timer);
                 clearInterval(timer2);
-                setTimeout(() => {
+                setTimeout(function () {
                     oText.style.opacity = 0;
                     setTimeout(function(){
                         document.getElementById('end').style.opacity = 1;
@@ -103,7 +106,7 @@ div.btnbg {
 
         var timer3;
         var j = 0;
-        setTimeout(() => {
+        setTimeout(function() {
             timer3 = setInterval(function() {
                 aTexts[j].className = '';
                 j++;
@@ -158,7 +161,11 @@ div.btnbg {
             <li>愿你一路上，有良人相伴</li>
         </ul>
 
-        <div id="end">付丽棠，生日快乐</div>
+        <ul id="end">
+            <li>417片花瓣</li>
+            <li>付丽棠</li>
+            <li>生日快乐</li>
+        </ul>
     </div>
 <canvas id="sakura"></canvas>
 <div class="btnbg">
