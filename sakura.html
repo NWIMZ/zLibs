@@ -53,8 +53,8 @@ ul{
     color: #fff;
     font-size: 22px;
     transition: 1s all;
-    -webkit-animation: 60s move linear;
-    animation:60s move linear;
+    -webkit-animation: 60s move linear forwards;
+    animation:60s move linear forwards;
 }
 
 #text li{
@@ -106,19 +106,16 @@ ul{
             aTexts[i].className = 'active';
             i++;
             if(i>=length){
-                clearInterval(timer);
                 // clearInterval(timer2);
                 clearInterval(timer3);
                 console.log('clearInterval');
-
                 setTimeout(function () {
-                    for(var i=0;i<length;i++){
-                        aTexts[i].className = '';
-                    }
+                    // oText.style.opacity = 0;
                     setTimeout(function(){
                         document.getElementById('end').style.opacity = 1;
                     },1000)
                 }, 3000);
+                clearInterval(timer);
             }
             console.log(i);
         }, 2000);
