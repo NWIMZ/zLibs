@@ -48,11 +48,13 @@ ul{
 #text{
     position: absolute;
     left: 10%;
-    top: 60%;
+    top: 70%;
     z-index: 20;
     color: #fff;
     font-size: 22px;
     transition: 1s all;
+    -webkit-animation: 60s move linear;
+    animation:60s move linear;
 }
 
 #text li{
@@ -71,6 +73,25 @@ ul{
     opacity: 0;
     font-size: 22px;
 }
+
+@keyframes move{
+    0%{
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    100%{
+        -webkit-transform: translateY(-864px);
+        transform: translateY(-864px);
+    }
+}
+@keyframes fadein {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
 </style>
 
 <script>
@@ -80,20 +101,25 @@ ul{
         var length = aTexts.length;
         var i = 1;
         aTexts[0].className = 'active';
+        console.log(length);
         var timer = setInterval(function() {
             aTexts[i].className = 'active';
             i++;
-            if(i>=length){
+            if(i>length){
                 clearInterval(timer);
-                clearInterval(timer2);
+                // clearInterval(timer2);
                 clearInterval(timer3);
+                console.log('clearInterval');
+
                 setTimeout(function () {
+                    for(var i=0;i<length;i++){
+                        aTexts[i].className = '';
+                    }
                     oText.style.opacity = 0;
                     setTimeout(function(){
                         document.getElementById('end').style.opacity = 1;
-
                     },1000)
-                }, 2000);
+                }, 3000);
             }
             console.log(i);
         }, 2000);
@@ -108,11 +134,11 @@ ul{
         }, 24000);
 
         var offset = 0;
-        var timer2 = setInterval(function() {
-            oText.style.webkitTransform = 'translateY(' + offset + 'px)';
-            oText.style.transform = 'translateY(' + offset + 'px)';
-            offset -= 0.15;
-        },10);
+        // var timer2 = setInterval(function() {
+        //     oText.style.webkitTransform = 'translateY(' + offset + 'px)';
+        //     oText.style.transform = 'translateY(' + offset + 'px)';
+        //     offset -= 0.2;
+        // },10);
     })
 </script>
 <body>
@@ -157,7 +183,6 @@ ul{
         </ul>
 
         <ul id="end">
-            <li>417片花瓣</li>
             <li>生日快乐</li>
             <li>付丽棠</li>
         </ul>
