@@ -107,14 +107,12 @@ ul{
         var length = aTexts.length;
         var i = 1;
         aTexts[0].className = 'active';
-        console.log(length);
         var timer = setInterval(function() {
             aTexts[i].className = 'active';
             i++;
             if(i>=length){
                 // clearInterval(timer2);
                 clearInterval(timer3);
-                console.log('clearInterval');
                 setTimeout(function () {
                     oText.style.opacity = 0;
                     setTimeout(function(){
@@ -123,7 +121,6 @@ ul{
                 }, 3000);
                 clearInterval(timer);
             }
-            console.log(i);
         }, 2000);
 
         var timer3;
