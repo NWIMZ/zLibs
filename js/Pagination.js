@@ -22,7 +22,7 @@ function Pagination(id, pageSize, totalCount, callback) {
     this.init();
 }
 Pagination.prototype.init = function() {
-    $('#' + this.id).addClass('pagination fr');
+    this.$element.addClass('pagination fr');
     var template = '<ul class="child-fl">' +
         '<li><a>每页' + this.pageSize + '条，共 <span class="totalPage">' + this.totalPage + '</span> 页</a>，共<span class="totalCount">' + this.totalCount + '</span>条</li>' +
         '<li><a href="javascript:;" class="firstPage">首页</a></li>' +

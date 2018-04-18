@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>transform实验室</title>
+    <link rel="stylesheet" href="css/transform/transform.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        .block {
+            width: 400px;
+            height: 400px;
+            background-color: black;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -200px;
+            margin-top: -200px;
+        }
+
+        /* 坐标轴 */
+
+        .x-axis,
+        .y-axis {
+            background: red;
+            position: absolute;
+        }
+
+        /* x轴 */
+
+        .x-axis {
+            height: 2px;
+            width: 100%;
+            left: 0;
+            top: 50%;
+            margin-left: -1px;
+        }
+
+        /* y轴 */
+
+        .y-axis {
+            height: 100%;
+            width: 2px;
+            left: 50%;
+            top: 0;
+            margin-top: -1px;
+        }
+
+        /* 坐标轴箭头 */
+
+        .x-axis:after,
+        .y-axis:after {
+            display: block;
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+        }
+
+        .x-axis:after {
+            right: -1px;
+            margin-top: -4px;
+            border-left: 12px solid red;
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+        }
+
+        .y-axis:after {
+            bottom: -1px;
+            margin-left: -4px;
+            border-top: 12px solid red;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+        }
+
+        /* 坐标轴标签 */
+
+        .y-axis span,
+        .x-axis span {
+            position: absolute;
+            line-height: 1;
+            color: red;
+        }
+
+        .y-axis span {
+            bottom: 16px;
+            margin-left: 16px;
+        }
+
+        .x-axis span {
+            right: 16px;
+            margin-top: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="block"></div>
+    <!-- 坐标 -->
+    <div class="x-axis"><span>X</span></div>
+    <div class="y-axis"><span>Y</span></div>
+</body>
+</html>

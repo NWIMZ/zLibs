@@ -1,0 +1,43 @@
+@charset "utf-8";
+// http://www.zhangxinxu.com/study/201206/css3-transform-matrix-skew.html
+// css3的坐标系中Y轴正方向向下
+//不变换
+.no-transform{
+    transform: none;
+}
+// 旋转
+.rotate{
+    // 
+    transform-origin: 0%;
+    // 旋转角度，正数为顺时针，负数为逆时针
+    transform: rotate(90deg);
+}
+// 缩放
+.scale{
+    // 第一个参数为x轴的缩放比例，第二个参数为y轴的缩放比例，若没有则和第一个参数一致
+    // 缩放比例大于1则放大，小于1则缩小
+    // 基点默认在元素的中心位置
+    transform: scale(0.9);
+
+    // transform: scaleX(0.2);
+    // transform: scaleY(0.7);
+}
+// 扭曲
+.skew{
+    // 第一个参数对应向x轴方向的扭曲角度，第二个参数对应向y轴的扭曲角度，若没有则为0，正数为向正方向扭曲，负数为向负方向扭曲
+    transform: skew(30deg,0deg);
+    // transform: skewX(30deg);
+    // transform: skewY(60deg);
+
+}
+// 平移
+.translate{
+    // 第一个参数为x轴方向的平移量，第二个参数为y轴方向的平移量，若没有则为0
+    transform: translate(50px,50px);
+    // transform: translateX(50px);
+    // transform: translateY(50px);
+}
+// 多个变换间用空格隔开
+.mult-transform{
+    transform: translate(10px) rotate(90deg);
+}

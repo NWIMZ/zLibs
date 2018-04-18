@@ -1,7 +1,7 @@
 /**
  * 检测flash
  */
-function flashChecker() {
+function checkFlash() {
     var hasFlash = 0; //是否安装了flash  
     var flashVersion = 0; //flash版本  
     var isIE = /*@cc_on!@*/ 0; //是否IE浏览器  

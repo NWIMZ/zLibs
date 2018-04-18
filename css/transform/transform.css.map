@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAIA,aAAa;EACT,SAAS,EAAE,IAAI;;AAGnB,OAAO;EAEH,gBAAgB,EAAE,EAAE;EAEpB,SAAS,EAAE,aAAa;;AAG5B,MAAM;EAIF,SAAS,EAAE,UAAU;;AAMzB,KAAK;EAED,SAAS,EAAE,iBAAgB;;AAM/B,UAAU;EAEN,SAAS,EAAE,qBAAoB;;AAKnC,eAAe;EACX,SAAS,EAAE,6BAA6B",
+"sources": ["../../scss/transform/transform.scss"],
+"names": [],
+"file": "transform.css"
+}

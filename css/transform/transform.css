@@ -1,0 +1,20 @@
+.no-transform {
+  transform: none; }
+
+.rotate {
+  transform-origin: 0%;
+  transform: rotate(90deg); }
+
+.scale {
+  transform: scale(0.9); }
+
+.skew {
+  transform: skew(30deg, 0deg); }
+
+.translate {
+  transform: translate(50px, 50px); }
+
+.mult-transform {
+  transform: translate(10px) rotate(90deg); }
+
+/*# sourceMappingURL=transform.css.map */

@@ -1,0 +1,45 @@
+@charset "utf-8";
+// 光标
+.cursor-default {
+    cursor: default;
+}
+.cursor-hand {
+    cursor: hand;
+}
+.cursor-pointer {
+    cursor: pointer;
+}
+.cursor-wait{
+    cursor: wait;
+}
+.cursor-help{
+    cursor: help;
+}
+// 垂直调整
+.cursor-s-resize{
+    cursor: s-resize;
+}
+// 水平调整
+.cursor-w-resize{
+    cursor: w-resize;
+}
+// 沿对角线调整
+.cursor-se-resize{
+    cursor: se-resize;
+}
+// 沿对角线调整
+.cursor-ne-resize{
+    cursor: ne-resize;
+}
+.cursor-move{
+    cursor: move;
+}
+
+/* 鼠标自定义图片 */
+.cursor-user-defined{
+    cursor: '';//图片地址
+}
+
+.cursor-text{
+    cursor: text;
+}

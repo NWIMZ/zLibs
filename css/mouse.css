@@ -1,0 +1,39 @@
+@charset "UTF-8";
+.cursor-default {
+  cursor: default; }
+
+.cursor-hand {
+  cursor: hand; }
+
+.cursor-pointer {
+  cursor: pointer; }
+
+.cursor-wait {
+  cursor: wait; }
+
+.cursor-help {
+  cursor: help; }
+
+.cursor-s-resize {
+  cursor: s-resize; }
+
+.cursor-w-resize {
+  cursor: w-resize; }
+
+.cursor-se-resize {
+  cursor: se-resize; }
+
+.cursor-ne-resize {
+  cursor: ne-resize; }
+
+.cursor-move {
+  cursor: move; }
+
+/* 鼠标自定义图片 */
+.cursor-user-defined {
+  cursor: ''; }
+
+.cursor-text {
+  cursor: text; }
+
+/*# sourceMappingURL=mouse.css.map */
