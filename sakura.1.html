@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Good Bye</title>
+<title>Happy Birthday For You!</title>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
 </head>
 <style>
@@ -52,9 +52,13 @@ ul{
     z-index: 20;
     color: #fff;
     font-size: 22px;
+    transition: 1s all;
+    -webkit-animation: 60s move linear forwards;
+    animation:60s move linear forwards;
 }
 
 #text li{
+    opacity: 0;
     transition: 1s all;
 }
 #text li.active{
@@ -69,14 +73,117 @@ ul{
     opacity: 0;
     font-size: 22px;
 }
+
+@-webkit-keyframes move{
+    0%{
+        -webkit-transform: translateY(0);
+    }
+    100%{
+        -webkit-transform: translateY(-864px);
+    }
+}
+@keyframes move{
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(-864px);
+    }
+}
+@keyframes fadein {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
 </style>
 
+<script>
+    window.addEventListener('load',function(){
+        var oText = document.getElementById('text');
+        var aTexts = oText.getElementsByTagName('li');
+        var length = aTexts.length;
+        var i = 1;
+        aTexts[0].className = 'active';
+        var timer = setInterval(function() {
+            aTexts[i].className = 'active';
+            i++;
+            if(i>=length){
+                // clearInterval(timer2);
+                clearInterval(timer3);
+                setTimeout(function () {
+                    oText.style.opacity = 0;
+                    setTimeout(function(){
+                        document.getElementById('end').style.opacity = 1;
+                    },1000)
+                }, 3000);
+                clearInterval(timer);
+            }
+        }, 2000);
+
+        var timer3;
+        var j = 0;
+        setTimeout(function() {
+            timer3 = setInterval(function() {
+                aTexts[j].className = '';
+                j++;
+            }, 2000);
+        }, 24000);
+
+        var offset = 0;
+        // var timer2 = setInterval(function() {
+        //     oText.style.webkitTransform = 'translateY(' + offset + 'px)';
+        //     oText.style.transform = 'translateY(' + offset + 'px)';
+        //     offset -= 0.2;
+        // },10);
+    })
+</script>
 <body>
     <div class="mask"></div>
     <div class="text-wrap">
         <ul id="text">
-            <li>我后悔了</li>
-            <li>要是能重来就好了</li>
+            <li>愿你一生努力</li>
+            <li>一生被爱</li>
+            <li>想要的都拥有</li>
+            <li>得不到的都释怀</li>
+            <li>只愿你被这世界温柔相待</li>
+            <li>&nbsp;</li>
+    
+            <li>愿你时时满心欢喜 </li>
+            <li>愿你歌声传唱不歇 </li>
+            <li>愿你永远年轻</li>
+            <li>永远热泪盈眶</li>
+            <li>&nbsp;</li>
+            
+            <li>愿你的快乐与岁月无关</li>
+            <li>愿你的纯真与经历无关</li>
+            <li>沧海桑田后依旧乘风破浪</li>
+            <li>尘埃落定后依旧炙热欢畅</li>
+            <li>&nbsp;</li>
+    
+            <li>愿你如阳光，明媚不忧伤</li>
+            <li>愿你拥有雌雄同体的灵魂 </li>
+            <li>活得嚣张</li>
+            <li>永不受伤</li>
+            <li>&nbsp;</li>
+    
+            <li>愿时光能缓</li>
+            <li>愿故人不散</li>
+            <li>愿你惦念的人能和你道晚安</li>
+            <li>愿你独闯的日子里不觉得孤单</li>
+            <li>&nbsp;</li>
+    
+            <li>愿你三冬暖</li>
+            <li>愿你春不寒</li>
+            <li>愿你天黑有灯，下雨有伞</li>
+            <li>愿你一路上，有良人相伴</li>
+        </ul>
+
+        <ul id="end">
+            <li>永远17岁</li>
+            <li>生日快乐，付丽棠</li>
         </ul>
     </div>
 <canvas id="sakura"></canvas>

@@ -18,4 +18,4 @@ Node.prototype.next = function(node){
         // 否则就在目标节点的下一个的节点插入之前插入
         _parentNode.insertBefore(node, refEle.nextSibling);
     }
-}
+};
