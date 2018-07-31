@@ -194,7 +194,7 @@ class DashBoard {
     drawLegend(wrap, radius){
         let num = this.legendArray.length;
         let startAngle = 180 + 45 + this.angleRange / num / 2;
-        var legendWrap = document.createElement('ul');
+        let legendWrap = document.createElement('ul');
         legendWrap.innerHTML = this.legendArray.reduce((prev,curr,index) => {
             return `${prev}<span style="
             line-height: 1;
@@ -231,29 +231,20 @@ class DashBoard {
         // 创建元素
         let html = '';
         for (let i = 0; i < this.scaleNum; i++) {
-            html += '<li></li>';
+            html += `<li style="
+                position: absolute;
+                left: ${radius-this.scaleWidth/2}px;
+                top: ${radius-this.calcSize(170)}px;
+                width: ${this.scaleWidth}px;
+                height: ${this.scaleHeight}px;
+            "></li>`;
         }
         oUl.innerHTML = html;
         scaleWrap.appendChild(oUl);
         let aLi = oUl.getElementsByTagName('li');
 
-        this.setScaleSize(aLi, radius);
         this.setScaleBackground(aLi);
         this.setScaleRotate(aLi);
-
-    }
-    /**
-     * 设置刻度的宽高
-     * @param {HTMLCollection} aLi
-     */
-    setScaleSize(aLi, radius) {
-        for (let li of aLi) {
-            li.style.cssText = `position: absolute;left: ${radius-this.scaleWidth/2}px;top: ${radius-this.calcSize(170)}px;`;
-            li.style.width = this.scaleWidth + 'px';
-            li.style.height = this.scaleHeight + 'px';
-
-            // li.style.marginRight = marginRight + 'px';
-        }
     }
     /**
      * 设置背景颜色
