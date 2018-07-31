@@ -51,7 +51,7 @@ class DashBoard {
 
         this.draw();
         this.drawScale(wrap, this.radius);
-        // TODO:写外层刻度文字
+        // 写外层刻度文字
         this.drawLegend(wrap, this.radius);
     }
 
@@ -188,7 +188,8 @@ class DashBoard {
     }
 
     /**
-     * 
+     * 最外层文字标记,
+     * XXX:由于有最小文字的原因,如果尺寸太小可能文字会重叠,还需改进
      */
     drawLegend(wrap, radius){
         let num = this.legendArray.length;
@@ -291,11 +292,16 @@ class DashBoard {
     }
 }
 
-var db = new DashBoard(document.getElementById('dashboard'));
-var d2b = new DashBoard(document.getElementById('dashboard1'),{
+var oWrap1 = document.createElement('div');
+var oWrap2 = document.createElement('div');
+document.documentElement.appendChild(oWrap1);
+document.documentElement.appendChild(oWrap2);
+
+var defalutDashBoard = new DashBoard(oWrap1);
+var configDashBoard = new DashBoard(oWrap2,{
     gradientColorArray: ['red', 'blue'],
     width: 300,
     height: 300,
     scaleNum: 30
 });
-d2b.draw(45);
+configDashBoard.draw(45);
