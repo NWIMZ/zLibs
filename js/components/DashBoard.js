@@ -51,13 +51,14 @@ class DashBoard {
 
         this.draw();
         this.drawScale(wrap, this.radius);
+        this.drawScaner(wrap,this.radius);
         // 写外层刻度文字
         this.drawLegend(wrap, this.radius);
     }
 
     /**
      * 
-     * @param {*} deg 指针角度
+     * @param {Number|String} deg 指针角度.数字的话直接表示多少度,字符的话,表示等级
      */
     draw(deg=0) {
         let ctx = this.ctx;
@@ -141,8 +142,17 @@ class DashBoard {
     /**
      * 画指针
      * @param {*} ctx 
+     * @param {Number|String} deg 角度 
      */
     drawPointer(ctx, deg = 0) {
+        if (typeof deg == 'string') {
+            let stepAng = this.angleRange / this.areaNum;
+            let arr = [];
+            for (let i = 0; i < this.areaNum; i++) {
+                arr.push(stepAng / 2 + stepAng * i);
+            }
+            deg = arr[deg-1] || deg;
+        }
         // 画三角
         ctx.rotate(this.calcRadByDeg(this.START_ANGLE + deg));
         ctx.fillStyle = '#0186f1';
@@ -281,6 +291,11 @@ class DashBoard {
             li.style.transform = `rotate(${startAngle + index * angleRange / this.scaleNum}deg)`;
         });
     }
+
+    drawScaner(warp){
+        let oScaner = document.createElement('div');
+
+    }
 }
 
 var oWrap1 = document.createElement('div');
@@ -295,4 +310,4 @@ var configDashBoard = new DashBoard(oWrap2,{
     height: 300,
     scaleNum: 30
 });
-configDashBoard.draw(45);
+configDashBoard.draw('1');
