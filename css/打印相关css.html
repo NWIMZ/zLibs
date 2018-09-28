@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>分页测试</title>
+    <style type="text/css">
+        .z-page {
+            page-break-before: auto;
+            page-break-after: always;
+        }
+        @page {
+            size: portrait;
+        }
+        @page :first{
+            size: landscape;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div style="height: 300px;overflow: auto">
+        <div class="z-page">第一页</div>
+        <div class="z-page">第二页</div>
+    </div>
+</body>
+
+</html>
