@@ -6,37 +6,28 @@ const COLORS = {
 const noop = function () {};
 class FlowChart {
     /**
-     * 绘制一个流程图
+     * 
      * @param {HTMLElement} el 
      * @param {} opts 
      */
     constructor(el, {
         getContent,
-        clickHandle
+        clickHandle,
+        dataList = []
     } = {}) {
         this.el = el;
         this.getContent = getContent || noop;
         this.clickHandle = clickHandle || noop;
         this.dataList = []; // 存储数据
-        // TODO:
-        this.render([{
-            title: '未开始',
-            status: 'notStart',
-        }, {
-            title: '进行中',
-            contents: '22222',
-            status: 'running',
-        }, {
-            title: '已完成',
-            contents: '333',
-            status: 'completed'
-        }]);
+        this.render(dataList);
         this.mainWrap = this.el.querySelector('.z-fc-main-wrap');
-        this.addItem({title:'已完成',contents: '1'});
-
         this.bindEvent();
     }
 
+    /**
+     * 
+     * @param {*} dataList [{title,contents,status}]
+     */
     render(dataList) {
         this.dataList = dataList;
         let html = dataList.reduce((accu, curr) => {
@@ -45,7 +36,6 @@ class FlowChart {
         }, '');
         this.el.innerHTML = `
         <div class="z-fc-container clearfix">
-            <div class="z-fc-vline"></div>
             <ul class="z-fc-main-wrap">
                 ${html}
             </ul>
@@ -69,6 +59,7 @@ class FlowChart {
             return '';
         }
         return `<li class="clearfix">
+            <div class="z-fc-line"></div>
             <span class="z-fc-point pull-left" style="background-color: ${color};"></span>
             <div class="clearfix pull-left z-fc-bubble">
                 <div class="z-fc-triangle pull-left"></div>
@@ -107,34 +98,33 @@ class FlowChart {
         /*  */
         position: relative;
     }
-    /* 左侧的灰色柱子 */
-    .z-fc-vline {
-        width: 4px;
-        background-color: #D9DEE2;
-        position: absolute;
-        /* TODO: */
-        top: 0;
-        bottom: 36px;
-        /* XXX:fix左侧的灰色柱子长度 */
-        left: 6px;
-    }
     /* 主体容器 */
     .z-fc-main-wrap {
         float: left;
         position: relative;
         z-index: 1;
+        padding: 0;
+        margin: 0;
+        list-style: none;
     }
 
     /* 每条流程 */
     .z-fc-main-wrap>li {
-        margin-bottom: 22px;
+        position: relative;
         /* 16 + 6 */
     }
-    /*  */
-    .z-fc-main-wrap>li:last-child {
-        margin-bottom: 0px;
-        height: 50px;
-        /* XXX:fix左侧的灰色柱子长度 */
+    /* 左侧的灰色柱子 */
+    .z-fc-line{
+        position: absolute;
+        width: 4px;
+        height: 100%;
+        background-color: #D9DEE2;
+        left: 6px;
+        z-index: -1;
+    }
+    /* XXX:fix左侧的灰色柱子长度 */
+    .z-fc-main-wrap>li:last-child .z-fc-line{
+        height: 0px;
     }
     
     /* 左侧柱子上的点 */
@@ -142,6 +132,7 @@ class FlowChart {
         width: 12px;
         height: 12px;
         border: 2px solid #fff;
+        box-sizing: content-box;
         border-radius: 50%;
         display: block;
     }
@@ -150,6 +141,11 @@ class FlowChart {
     .z-fc-bubble {
         margin-left: 10px;
         margin-top: -6px;
+        margin-bottom: 22px;/* 16 + 6 */
+        max-width: calc(100% - 26px);
+    }
+    .z-fc-main-wrap>li:last-child .z-fc-bubble{
+        margin-bottom: 0px;
     }
 
     /* 带阴影的三角形 */
@@ -187,20 +183,23 @@ class FlowChart {
         box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.2);
         padding: 8px;
         background: #fff;
+        max-width: calc(100% - 9px);
     }
     /* 标题 */
     .z-fc-contents h4 {
         font-weight: normal;
         font-size: 16px;
         cursor: pointer;
+        margin: 0;
     }
     /* 箭头 */
     .z-fc-right-arrow {
         display: inline-block;
+        /* 颜色继承自父元素的color */
         border-top: 2px solid;
         border-right: 2px solid;
-        width: 6px;
-        height: 6px;
+        width: 8px;
+        height: 8px;
         transform: rotate(45deg);
         position: relative;
         top: -1px;
@@ -210,10 +209,8 @@ class FlowChart {
     .z-fc-contents p {
         font-size: 14px;
         color: #777;
-    }
-    /* 内容里的黑字 */
-    .z-fc-contents p span {
-        color: #000;
+        margin: 0;
+        padding: 0;
     }
     `;
     document.body.appendChild(oStyle);
