@@ -1,3 +1,9 @@
+/*
+ * @Author: Z 
+ * @Date: 2018-10-12 14:17:25 
+ * @Last Modified by: Z
+ * @Last Modified time: 2018-10-29 13:47:25
+ */
 const COLORS = {
     'notStart': '#1FB5FF', // 未开始
     'running': '#FFAF25', // 进行中
@@ -65,7 +71,7 @@ class FlowChart {
                 <div class="z-fc-triangle pull-left"></div>
                 <div class="z-fc-contents pull-left">
                     <h4 style="color: ${color};">${title}<div class="z-fc-right-arrow"></div></h4>
-                    <p>${contents}</p>
+                    <div>${contents}</div>
                 </div>
             </div>
         </li>`;
@@ -77,10 +83,10 @@ class FlowChart {
         //     }
         // });
         // XXX:去调jQuery
-        $(this.mainWrap).on('click','h4',(event) => {
-            let index = $(event.target).parents('li').eq(0).index();
-            this.clickHandle(this.dataList[index],index);
-        });
+        // $(this.mainWrap).on('click','h4',(event) => {
+        //     let index = $(event.target).parents('li').eq(0).index();
+        //     this.clickHandle(this.dataList[index],index);
+        // });
     }
 }
 
@@ -211,7 +217,27 @@ class FlowChart {
         color: #777;
         margin: 0;
         padding: 0;
+        margin-top: 10px;
     }
     `;
     document.body.appendChild(oStyle);
 })();
+
+
+// Test:
+var oWrap = document.createElement('div');
+var fc = new FlowChart(oWrap,{
+    dataList : [{
+    title: '未开始',
+    status: 'notStart',
+}, {
+    title: '进行中',
+    contents: '22221111111112',
+    status: 'running',
+}, {
+    title: '已完成',
+    contents: '333',
+    status: 'completed'
+}]
+});
+document.body.append(oWrap);

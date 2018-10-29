@@ -39,3 +39,6 @@ var loading = (function() {
         hide: hide,
     };
 })();
+
+// Test:
+// loading.show();
