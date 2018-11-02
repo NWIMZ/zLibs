@@ -264,7 +264,7 @@ class DashBoard {
         let len = this.gradientColorArray.length;
         let linearGradient = this.gradientColorArray.map((color, index) => {
             let ptc = (index + 1) / len * 100 + '%';
-            return color //+ ' ' + ptc;
+            return color + ' ' + ptc;
         }).join(',');
 
         let backgroundImage = `linear-gradient(to right,${linearGradient})`;
@@ -300,15 +300,15 @@ class DashBoard {
 
 // Test
 var oWrap1 = document.createElement('div');
-var oWrap2 = document.createElement('div');
 document.documentElement.appendChild(oWrap1);
-document.documentElement.appendChild(oWrap2);
-
 var defalutDashBoard = new DashBoard(oWrap1);
-var configDashBoard = new DashBoard(oWrap2,{
-    gradientColorArray: ['red', 'blue'],
-    width: 300,
-    height: 300,
-    scaleNum: 30
-});
-configDashBoard.draw('1');
+
+// var oWrap2 = document.createElement('div');
+// document.documentElement.appendChild(oWrap2);
+// var configDashBoard = new DashBoard(oWrap2,{
+//     gradientColorArray: ['red', 'blue'],
+//     width: 300,
+//     height: 300,
+//     scaleNum: 30
+// });
+// configDashBoard.draw('1');

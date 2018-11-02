@@ -1,18 +1,27 @@
+/**
+ * @description 雷达底图
+ * @param {HTMLElement} element 
+ * @param {Object} 配置项 color:绘制颜色 circleNum:圈圈数 lineNum:直线数 
+ */
 function drawRadar(element, {
     color = 'rgba(31,181,255,0.5)',
     circleNum = 4,
     lineNum = 4,
 } = {}) {
-    element.style.position = 'relative';
     let width = element.offsetWidth;
     let height = element.offsetHeight;
     width = height = Math.min(width, height);
 
+    let oContainer = document.createElement('div');
+    oContainer.className = 'js-radar';
+    oContainer.style.position = 'relative';
+
     let oCanvas = document.createElement('canvas');
     oCanvas.width = oCanvas.height = width;
 
-    element.innerHTML = `<div class="radar-scanner" style="width:${width}px;height: ${height}px"></div>`
-    element.append(oCanvas);
+    oContainer.innerHTML = `<div class="radar-scanner" style="width:${width}px;height: ${height}px"></div>`;
+    oContainer.append(oCanvas);
+    element.append(oContainer);
 
 
     let radius = width / 2;
@@ -38,6 +47,7 @@ function drawRadar(element, {
         ctx.stroke();
         ctx.rotate(Math.PI / lineNum);
     }
+    return element;
 }
 
 // 添加css
@@ -60,7 +70,7 @@ function drawRadar(element, {
         content: "";
         display: block;
         /* background-image: conic-gradient(rgba(0,0,0, 0), rgba(1,134,241,0.6)); */
-        background: url("./09.png") no-repeat;
+        background: url("./scaner.png") no-repeat;
         background-size: contain;
         width: 50%;
         height: 50%;
