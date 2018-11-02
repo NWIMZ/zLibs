@@ -220,7 +220,7 @@ class FlowChart {
         margin-top: 10px;
     }
     `;
-    document.body.appendChild(oStyle);
+    document.head.appendChild(oStyle);
 })();
 
 
