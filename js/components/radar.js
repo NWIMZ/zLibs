@@ -2,18 +2,17 @@
  * @Author: Z 
  * @Date: 2018-11-01 17:09:04 
  * @Last Modified by: Z
- * @Last Modified time: 2018-11-05 15:48:47
+ * @Last Modified time: 2018-11-05 16:02:03
  * @description 雷达底图
  * @param {HTMLElement} element 
  * @param {Object} 配置项 color:绘制颜色 circleNum:圈圈数 lineNum:直线数 
  */
-/**
 
- */
 function drawRadar(element, {
     color = 'rgba(31,181,255,0.5)',
     circleNum = 4,
     lineNum = 4,
+    isScan = true
 } = {}) {
     let width = element.offsetWidth;
     let height = element.offsetHeight;
@@ -26,7 +25,10 @@ function drawRadar(element, {
     let oCanvas = document.createElement('canvas');
     oCanvas.width = oCanvas.height = width;
 
-    oContainer.innerHTML = `<div class="radar-scanner" style="width:${width}px;height: ${height}px"></div>`;
+    if(isScan){
+        oContainer.innerHTML = `<div class="radar-scanner" style="width:${width}px;height: ${height}px"></div>`;
+    }
+
     oContainer.append(oCanvas);
     element.append(oContainer);
 
@@ -40,14 +42,14 @@ function drawRadar(element, {
     ctx.lineWidth = 1;
     ctx.strokeStyle = color;
     for (let i = circleNum; i > 0; i--) {
+        ctx.beginPath();
         ctx.arc(0, 0, radius * i / circleNum, 0, 2 * Math.PI);
         ctx.stroke();
     }
 
-
     ctx.save();
     // 画线
-    for (let i = 0; i <= lineNum; i++) {
+    for (let i = 0; i < lineNum; i++) {
         ctx.beginPath();
         ctx.moveTo(-radius, 0);
         ctx.lineTo(radius, 0);
@@ -105,4 +107,4 @@ oDiv.style.width = '400px';
 oDiv.style.height = '400px';
 document.body.append(oDiv);
 
-drawRadar(oDiv);
+drawRadar(oDiv,{isScan:false});
