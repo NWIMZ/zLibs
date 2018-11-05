@@ -1,8 +1,9 @@
-/*
+/**
+ * 流程图
  * @Author: Z 
- * @Date: 2018-10-12 14:17:25 
+ * @Date: 2018-09-27 14:48:25 
  * @Last Modified by: Z
- * @Last Modified time: 2018-10-29 13:47:25
+ * @Last Modified time: 2018-11-05 15:47:25
  */
 const COLORS = {
     'notStart': '#1FB5FF', // 未开始

@@ -1,4 +1,8 @@
 /**
+ * @Author: Z 
+ * @Date: 2018-05-18 15:44:29 
+ * @Last Modified by: Z
+ * @Last Modified time: 2018-11-05 15:48:27
  * @description 分页组件
  * @version v2.0.2
  * @param {String} id 元素id
@@ -7,7 +11,6 @@
  * @param {Function} callback 请求数据的函数
  * @requires jQuery
  * @author Warden
- * @date 2017.11.06
  */
 function Pagination(id, pageSize, totalCount, callback) {
     this.id = id;

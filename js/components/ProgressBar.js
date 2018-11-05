@@ -1,6 +1,9 @@
 /**
- * @updata: 2018.05.22
  * 进度条
+ * @Author: Z 
+ * @Date: 2018-07-31 14:47:23 
+ * @Last Modified by: Z
+ * @Last Modified time: 2018-11-05 15:48:33
  */
 class ProgressBar{
     constructor({elem,value,min,max,cssText,progressColor,backgroundColor,height,className}){

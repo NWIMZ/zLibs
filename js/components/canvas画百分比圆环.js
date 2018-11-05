@@ -1,9 +1,9 @@
-/* 
+/**
  * canvas画百分比圆环
  * @Author: Z 
  * @Date: 2018-07-20 14:45:04 
  * @Last Modified by: Z
- * @Last Modified time: 2018-10-29 13:42:28
+ * @Last Modified time: 2018-11-05 15:47:33
  */
 function draw(c,pct,opts){
     // canvas的宽高

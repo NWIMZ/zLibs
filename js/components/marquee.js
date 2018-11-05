@@ -1,6 +1,9 @@
-
 /**
  * 文字横向滚动
+ * @Author: Z 
+ * @Date: 2018-07-30 09:41:41 
+ * @Last Modified by: Z
+ * @Last Modified time: 2018-11-05 15:48:09
  * @param {HTMLElement} oWrap 目标元素 
  * @param {Array} textList 通知文字数组 ['first','second']
  * @param {Number} speed 滚动速度 移动1px所用毫秒数
