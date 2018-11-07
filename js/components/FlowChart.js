@@ -3,13 +3,14 @@
  * @Author: Z 
  * @Date: 2018-09-27 14:48:25 
  * @Last Modified by: Z
- * @Last Modified time: 2018-11-07 14:40:37
+ * @Last Modified time: 2018-11-07 15:11:07
  */
 const COLORS = {
     'notStart': '#1FB5FF', // 未开始
     'running': '#FFAF25', // 进行中
     'completed': '#2EBC12' // 已完成
 };
+// 空函数
 const noop = function () {};
 class FlowChart {
     /**
