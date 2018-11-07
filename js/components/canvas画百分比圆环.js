@@ -1,14 +1,17 @@
 /**
- * canvas画百分比圆环
  * @Author: Z 
  * @Date: 2018-07-20 14:45:04 
  * @Last Modified by: Z
- * @Last Modified time: 2018-11-05 18:11:15
+ * @Last Modified time: 2018-11-07 14:40:29
+ * @description canvas画百分比圆环
  */
-function drawRing(c,pct,opts){
-    // canvas的宽高
-    let width = c.width;
-    let height = c.height;
+function drawRing(element,pct,opts){
+    
+    let width = element.offsetWidth;
+    let height = element.offsetHeight;
+
+    let oCanvas = document.createElement('canvas');
+    oCanvas.width = oCanvas.height = width = height = Math.min(width, height);
     
     const defalutOpts = {
         // 圆环底色
@@ -28,10 +31,8 @@ function drawRing(c,pct,opts){
     const centerX = width / 2;
     const centerY = height / 2;
     
-    
-    
 
-    var ctx = c.getContext("2d");
+    let ctx = oCanvas.getContext("2d");
     // 坐标轴移动到中心
     ctx.translate(centerX, centerY);
 
@@ -52,12 +53,13 @@ function drawRing(c,pct,opts){
     ctx.strokeStyle = frontColor;
     ctx.arc(0, 0, radius, 0, 2 * Math.PI * pct);
     ctx.stroke();
+
+    element.appendChild(oCanvas);
+
 }
 
 // Test:
-let oC = document.createElement('canvas');
-oC.width = 500;
-oC.height = 500;
+let oC = document.createElement('div');
 
 document.body.appendChild(oC);
 drawRing(oC, 0.9, {

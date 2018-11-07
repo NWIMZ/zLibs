@@ -3,7 +3,7 @@
  * @Author: Z 
  * @Date: 2018-09-27 14:48:25 
  * @Last Modified by: Z
- * @Last Modified time: 2018-11-05 15:47:25
+ * @Last Modified time: 2018-11-07 14:40:37
  */
 const COLORS = {
     'notStart': '#1FB5FF', // 未开始
@@ -226,8 +226,8 @@ class FlowChart {
 
 
 // Test:
-var oWrap = document.createElement('div');
-var fc = new FlowChart(oWrap,{
+let oWrap = document.createElement('div');
+let fc = new FlowChart(oWrap,{
     dataList : [{
     title: '未开始',
     status: 'notStart',

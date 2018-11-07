@@ -2,7 +2,7 @@
  * @Author: Z 
  * @Date: 2018-07-31 14:25:44 
  * @Last Modified by: Z
- * @Last Modified time: 2018-11-05 16:17:23
+ * @Last Modified time: 2018-11-07 14:40:21
  */
 class DashBoard {
     /**
@@ -305,14 +305,14 @@ class DashBoard {
 }
 
 // Test
-var oWrap1 = document.createElement('div');
+let oWrap1 = document.createElement('div');
 document.body.appendChild(oWrap1);
-var defalutDashBoard = new DashBoard(oWrap1);
+let defalutDashBoard = new DashBoard(oWrap1,{width: oWrap1.offsetWidth,height: oWrap1.offsetHeight});
 defalutDashBoard.draw(90);
 
-// var oWrap2 = document.createElement('div');
+// let oWrap2 = document.createElement('div');
 // document.documentElement.appendChild(oWrap2);
-// var configDashBoard = new DashBoard(oWrap2,{
+// let configDashBoard = new DashBoard(oWrap2,{
 //     gradientColorArray: ['red', 'blue'],
 //     width: 300,
 //     height: 300,

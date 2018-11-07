@@ -2,7 +2,7 @@
  * @Author: Z 
  * @Date: 2018-11-01 17:09:04 
  * @Last Modified by: Z
- * @Last Modified time: 2018-11-07 11:36:57
+ * @Last Modified time: 2018-11-07 11:59:36
  * @description 雷达底图
  * @param {HTMLElement} element 
  * @param {Object} 配置项 color:绘制颜色 circleNum:圈圈数 lineNum:直线数 
@@ -108,8 +108,8 @@ function drawRadar(element, {
 })();
 
 var oDiv = document.createElement('div');
-oDiv.style.width = '400px';
-oDiv.style.height = '400px';
+// oDiv.style.width = '400px';
+// oDiv.style.height = '400px';
 document.body.append(oDiv);
 
 drawRadar(oDiv,{isScan:false});
