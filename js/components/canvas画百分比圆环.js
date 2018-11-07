@@ -3,9 +3,9 @@
  * @Author: Z 
  * @Date: 2018-07-20 14:45:04 
  * @Last Modified by: Z
- * @Last Modified time: 2018-11-05 15:47:33
+ * @Last Modified time: 2018-11-05 18:11:15
  */
-function draw(c,pct,opts){
+function drawRing(c,pct,opts){
     // canvas的宽高
     let width = c.width;
     let height = c.height;
@@ -60,6 +60,6 @@ oC.width = 500;
 oC.height = 500;
 
 document.body.appendChild(oC);
-draw(oC, 0.9, {
+drawRing(oC, 0.9, {
     // radius: 200,
 });

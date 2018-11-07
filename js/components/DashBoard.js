@@ -2,7 +2,7 @@
  * @Author: Z 
  * @Date: 2018-07-31 14:25:44 
  * @Last Modified by: Z
- * @Last Modified time: 2018-11-05 15:47:33
+ * @Last Modified time: 2018-11-05 16:17:23
  */
 class DashBoard {
     /**
@@ -306,8 +306,9 @@ class DashBoard {
 
 // Test
 var oWrap1 = document.createElement('div');
-document.documentElement.appendChild(oWrap1);
+document.body.appendChild(oWrap1);
 var defalutDashBoard = new DashBoard(oWrap1);
+defalutDashBoard.draw(90);
 
 // var oWrap2 = document.createElement('div');
 // document.documentElement.appendChild(oWrap2);

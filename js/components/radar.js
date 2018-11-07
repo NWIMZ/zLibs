@@ -2,7 +2,7 @@
  * @Author: Z 
  * @Date: 2018-11-01 17:09:04 
  * @Last Modified by: Z
- * @Last Modified time: 2018-11-07 11:29:42
+ * @Last Modified time: 2018-11-07 11:36:57
  * @description 雷达底图
  * @param {HTMLElement} element 
  * @param {Object} 配置项 color:绘制颜色 circleNum:圈圈数 lineNum:直线数 
@@ -37,6 +37,9 @@ function drawRadar(element, {
     let radius = width / 2;
     let ctx = oCanvas.getContext('2d');
     ctx.translate(width / 2, height / 2);
+    // 设置重叠模式
+    // https://developer.mozilla.org/zh-CN/docs/Web/API/CanvasRenderingContext2D/globalCompositeOperation
+    ctx.globalCompositeOperation = 'xor';
 
     // 画圆形
     ctx.beginPath();
@@ -109,4 +112,4 @@ oDiv.style.width = '400px';
 oDiv.style.height = '400px';
 document.body.append(oDiv);
 
-drawRadar(oDiv,{isScan:false,lineWidth: 10});
+drawRadar(oDiv,{isScan:false});
