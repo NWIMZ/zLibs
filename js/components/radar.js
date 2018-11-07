@@ -2,7 +2,7 @@
  * @Author: Z 
  * @Date: 2018-11-01 17:09:04 
  * @Last Modified by: Z
- * @Last Modified time: 2018-11-05 16:02:03
+ * @Last Modified time: 2018-11-07 11:29:42
  * @description 雷达底图
  * @param {HTMLElement} element 
  * @param {Object} 配置项 color:绘制颜色 circleNum:圈圈数 lineNum:直线数 
@@ -12,7 +12,8 @@ function drawRadar(element, {
     color = 'rgba(31,181,255,0.5)',
     circleNum = 4,
     lineNum = 4,
-    isScan = true
+    isScan = true,
+    lineWidth = 1
 } = {}) {
     let width = element.offsetWidth;
     let height = element.offsetHeight;
@@ -39,11 +40,12 @@ function drawRadar(element, {
 
     // 画圆形
     ctx.beginPath();
-    ctx.lineWidth = 1;
+    ctx.lineWidth = lineWidth;
     ctx.strokeStyle = color;
     for (let i = circleNum; i > 0; i--) {
         ctx.beginPath();
-        ctx.arc(0, 0, radius * i / circleNum, 0, 2 * Math.PI);
+        let r = radius * i / circleNum - lineWidth / 2;
+        ctx.arc(0, 0, r, 0, 2 * Math.PI);
         ctx.stroke();
     }
 
@@ -107,4 +109,4 @@ oDiv.style.width = '400px';
 oDiv.style.height = '400px';
 document.body.append(oDiv);
 
-drawRadar(oDiv,{isScan:false});
+drawRadar(oDiv,{isScan:false,lineWidth: 10});
