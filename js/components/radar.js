@@ -2,7 +2,7 @@
  * @Author: Z 
  * @Date: 2018-11-01 17:09:04 
  * @Last Modified by: Z
- * @Last Modified time: 2018-11-07 11:59:36
+ * @Last Modified time: 2018-11-13 16:34:29
  * @description 雷达底图
  * @param {HTMLElement} element 
  * @param {Object} 配置项 color:绘制颜色 circleNum:圈圈数 lineNum:直线数 
@@ -42,7 +42,6 @@ function drawRadar(element, {
     ctx.globalCompositeOperation = 'xor';
 
     // 画圆形
-    ctx.beginPath();
     ctx.lineWidth = lineWidth;
     ctx.strokeStyle = color;
     for (let i = circleNum; i > 0; i--) {
